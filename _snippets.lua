@@ -23,6 +23,10 @@ local SERVO_FN = 94
 local srv_pwm = SRV_Channels:get_output_pwm(SERVO_FN)
 SRV_Channels:set_output_pwm(SERVO_FN, srv_pwm)
 
+-- ! vehicle mode
+local mode = vehicle:get_mode()
+vehicle:set_mode(mode)
+
 -- ! parameter get/set
 local mode_channel = param:get("MODE_CH")
 param:set("MODE_CH", mode_channel)  -- does not persist after reboot
